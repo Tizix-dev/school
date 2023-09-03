@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sélection du Profil Utilisateur</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('other.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+  .profile {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .profile h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .profile button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="profile-container">
+  <div class="profile fade-in">
+    <img src="profile.jpg" alt="Oz Touch">
+    <h2>Oz Touch</h2>
+    <button onclick="selectProfile('Oz Touch')">Sélectionner</button>
+  </div>
+  <div class="profile fade-in">
+    <img src="profile.jpg" alt="Adil">
+    <h2>Jalil</h2>
+    <button onclick="selectProfile('Jalil')">Sélectionner</button>
+</div>
+<div class="profile fade-in">
+  <img src="profile.jpg" alt="Invité">
+  <h2>Invité</h2>
+  <button onclick="selectProfile('Invité')">Sélectionner</button>
+</div>
+<script>
+  function selectProfile(profile) {
+    window.location.href = 'Programme.html?profil=' + profile;
+    alert('Profil de ' + profile + ' sélectionné.');
+  }
+</script>
+</body>
+</html>

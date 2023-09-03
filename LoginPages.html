@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RomM Data Secur.</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('other.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .fade-in-text {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+  }
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+  .access-code {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .access-code input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .access-code button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="welcome-container">
+  <h1 class="fade-in-text">Bienvenue sur RomM</h1>
+  <p class="fade-in-text">Veuillez entrer le code d'accès à cette base RomM pour continuer : </p>
+  <div class="access-code">
+    <input type="password" id="accessCode" placeholder="Code d'accès">
+    <button onclick="checkAccessCode()">Valider le code</button>
+  </div>
+</div>
+<script>
+  function checkAccessCode() {
+    const enteredCode = document.getElementById('accessCode').value;
+    const validCode = '417-908-322';
+    
+    if (enteredCode === validCode) {
+      window.location.href = 'invitprofil.html';
+    } else {
+      alert('Code incorrect. Veuillez réessayer.');
+    }
+  }
+</script>
+<!-- Deuxieme code d'acces au cas ou pour la famille aktas -->
+<script>
+  function checkAccessCode() {
+    const enteredCode = document.getElementById('accessCode').value;
+    const validCode = '1703';
+    
+    if (enteredCode === validCode) {
+      window.location.href = 'invitprofil.html';
+    } else {
+      alert('Code incorrect. Veuillez réessayer.');
+    }
+  }
+</script>
+<!-- empecher le refresh -->
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function(event) {
+    history.go(0);
+  };
+</script>
+
+</body>
+</html>
