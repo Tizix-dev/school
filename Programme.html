@@ -167,6 +167,26 @@
             <span class="time">Durée : 8h10 à 15h20</span>
         </div>
     </div>    
+
+    <button id="toggle-orientation-button">Basculer en Portrait</button>
+<script>
+  var toggleButton = document.getElementById("toggle-orientation-button");
+  var schedule = document.querySelector(".schedule");
+
+  toggleButton.addEventListener("click", function() {
+    // Vérifiez si la classe portrait est déjà présente
+    if (schedule.classList.contains("portrait")) {
+      // Si c'est le cas, supprimez la classe portrait pour revenir en mode paysage
+      schedule.classList.remove("portrait");
+      toggleButton.textContent = "Basculer en Portrait";
+    } else {
+      // Sinon, ajoutez la classe portrait pour passer en mode portrait
+      schedule.classList.add("portrait");
+      toggleButton.textContent = "Basculer en Paysage";
+    }
+  });
+</script>
+
     <a href="index.html">
         <button id="corner-button">
           🏠
