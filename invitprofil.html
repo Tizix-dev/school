@@ -93,5 +93,23 @@
     alert('Profil de ' + profile + ' sélectionné.');
   }
 </script>
+
+  <script>
+    // Fonction pour détecter si l'utilisateur est sur un appareil mobile
+    function detectMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Fonction pour afficher l'alerte si l'utilisateur est sur un appareil mobile
+    function showAlertIfMobile() {
+        if (detectMobileDevice()) {
+            alert("Vous etes sur Mobile, mettez votre téléphone en paysage pour voir mieux les informations affichés à l'écran");
+        }
+    }
+
+    // Appeler la fonction au chargement de la page
+    window.onload = showAlertIfMobile;
+</script>
+  
 </body>
 </html>
