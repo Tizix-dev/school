@@ -129,17 +129,119 @@
               transform: translate(-50%, -50%) rotate(30deg);
             }
           }
+                header h1 {
+            font-size: 36px;
+        }
+
+        main {
+            background-color: #333;
+            padding: 20px;
+        }
+
+        main h2 {
+            font-size: 28px;
+            color: #0070c9;
+        }
+
+        main p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .menu-button {
+            background-color: #0070c9;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1;
+        }
+
+        .menu-button:hover {
+            background-color: #005bbd;
+        }
+
+        .menu-container {
+            background-color: #1e1e1e;
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            bottom: -300px;
+            left: 0;
+            width: 100%;
+            transition: bottom 0.3s;
+            z-index: 1;
+        }
+
+        .menu-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu-item {
+            padding: 15px;
+            border-top: 1px solid #8ed4e8;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #0091ff;
+        }
+
+        /* Styles pour l'icône de croix */
+        .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
     <title>School Tracker</title>
 </head>
 <body>
-    <div class="menu">
-        <a href="agenda.html">Suvi du calendrier de Izhak</a>
-        <a href="Avis.html">Avis reçu</a>
-        <a href="cours.html">Cours de la journée</a>
-        <a href="Absence.html">Absence Enregistrée</a>
+     <div class="menu-button" id="open-menu">
+        Ouvrir le menu de navigation
+    </div>
+    <div class="menu-container" id="menu">
+        <!-- Ajoutez un élément avec une icône de croix pour fermer le menu -->
+        <div class="close-icon" id="close-menu">&#10005;</div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="Avis.html">Voir les avis récent</a></li>
+            <li class="menu-item"><a href="cours.html">Voir les cours de la semaine</a></li>
+            <li class="menu-item"><a href="Absence.html">Voir les remarques recu et retard</a></li>
+        </ul>
     </div>
 
+    <script>
+        const openMenuButton = document.getElementById("open-menu");
+        const menuContainer = document.getElementById("menu");
+        const closeMenuButton = document.getElementById("close-menu");
+
+        openMenuButton.addEventListener("click", () => {
+            if (menuContainer.style.bottom === "0px") {
+                menuContainer.style.bottom = "-300px";
+            } else {
+                menuContainer.style.bottom = "0px";
+            }
+        });
+
+        closeMenuButton.addEventListener("click", () => {
+            menuContainer.style.bottom = "-300px";
+        });
+    </script>
     <div class="schedule">
         <div class="day">
             Lundi<br>
