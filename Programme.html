@@ -211,7 +211,35 @@
           history.go(1);
         };
       </script>
-    
+
+    <script>
+    var menuButton = document.getElementById("menu-button");
+    var menu = document.querySelector(".menu");
+
+    menuButton.addEventListener("click", function() {
+        if (menu.style.display === "block" || menu.style.display === "") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    });
+</script>
+
+<script>
+    var menuButton = document.getElementById("menu-button");
+    var menu = document.querySelector(".menu");
+
+    menuButton.addEventListener("click", function() {
+        if (menu.style.display === "block" || menu.style.display === "") {
+            menu.style.display = "none";
+            menuButton.textContent = "Menu"; // Remettre le texte du bouton à "Menu"
+        } else {
+            menu.style.display = "block";
+            menuButton.textContent = "✕"; // Changer le texte du bouton en une croix
+        }
+    });
+</script>
+
 
 </body>
 </html>
